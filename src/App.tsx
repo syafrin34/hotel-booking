@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { db } from "./utils";
 function App() {
   const [hotels, setHotels] = useState([]);
+  console.log("Database URL:", import.meta.env.VITE_DATABASE_URL);
+  console.log("Project ID:", import.meta.env.VITE_PROJECT_ID);
   useEffect(() => {
     const query = ref(db, "hotels");
     onValue(query, (snapshoot) => {
